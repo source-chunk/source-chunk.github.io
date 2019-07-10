@@ -180,6 +180,7 @@ div.potential:hover {
 }
 .picker.disabled {
 	background-color: rgb(155, 155, 155);
+	cursor: default;
 }
 button.picker:hover:not(.disabled) {
 	background-color: rgb(61, 153, 0);
