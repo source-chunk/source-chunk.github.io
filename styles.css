@@ -178,7 +178,10 @@ div.potential:hover {
 	background-color: rgb(71, 177, 0);
 	box-shadow: 0 6px rgb(150, 150, 150);
 }
-button.picker:hover {
+.picker.disabled {
+	background-color: rgb(155, 155, 155);
+}
+button.picker:hover:not(.disabled) {
 	background-color: rgb(61, 153, 0);
 }
 button.picker:active {
