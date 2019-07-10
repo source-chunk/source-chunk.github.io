@@ -77,6 +77,14 @@ function pickChunk(id) {
         updatePotentialNumbers();
     }
 
+    if (removePotential) {
+        var chunks2 = document.getElementsByClassName("potential");
+
+        for (var i = chunks2.length - 1; i >= 0; i--) {
+            addChunkAsLocked(chunks2[i].id);
+        }
+    }
+
     document.getElementById("pick1").disabled = false;
     document.getElementById("pick1").className = "picker";
     document.getElementById("pick2").disabled = false;
