@@ -64,7 +64,10 @@ function pickChunk(id) {
 				addChunkAsUnlocked(chunk.id);
 				//chunk.innerText = savedText;
             }, 1000);
-		}
+        }
+        else if (removePotential) {
+            addChunkAsLocked(chunks[i].id);
+        }
 		else {
             addChunkAsPotential(chunks[i].id);
         }
@@ -102,15 +105,13 @@ function pickPotentialChunk2() {
                 addChunkAsMaybe(chunk.id);
                 //chunk.innerText = savedText;
             }
-            else if (removePotential) {
-                addChunkAsLocked(chunks[i].id);
-            }
         }
 	}
     
     if (!removePotential) {
         updatePotentialNumbers();
     }
+
     document.getElementById("pick1").disabled = true;
     document.getElementById("pick1").className = "picker disabled";
     document.getElementById("pick2").disabled = true;
