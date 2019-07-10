@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="utils/chunkIds.js"></script>
+		<script src="map/map.js"></script>
+		<script src="map/transforms.js"></script>
+		<script src="map/buttons.js"></script>
+		<script src="map/importExport.js"></script>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+
+	<body>
+		<div class="completeDiv" id="superParent">
+			<div class="imgDiv" id="imgDiv">
+				<img class="overlay" id="overlay" src="images/grid overlay.png">
+				<img class="map" id="map" src="images/osrs_world_map_may20_2019.png">
+				<div class="btnDiv" id="btnDiv">
+				</div>
+			</div>
+
+			<div class="sidebarLeft" id="sidebarLeft">
+				<div class="controls" id="controls">
+					<h2 style="margin: 0px">OSRS Chunk Picker</h2>
+					<button class="picker" onclick="pickPotentialChunk()">Pick a random potential chunk!</button>
+					<button class="picker" onclick="pickPotentialChunk2()">Pick two random chunks!</button>
+					<button class="picker" onclick="centerOnUnlockedTiles()">Center on unlocked tiles</button>
+					<div style="margin: 10px; line-height: 20px">
+						<label class="checkLabel">
+							<input type="checkbox" id="selectNewNeighbors" checked onclick="disableOtherCheckbox(this)">
+							Mark new neighbors as potential after rolling.
+						</label></br>
+						<label class="checkLabel">
+							<input type="checkbox" id="removePotential" disabled onclick="disableOtherCheckbox(this)">
+							Remove potential chunks after rolling.
+						</label>
+					</div>
+				</div>
+				<div class="importExport" id="importExport">
+					<h2 style="margin: 0px">Import/Export</h2>
+					<button class="picker" id="importButton" onclick="document.getElementById('select').click()">Import</button>
+					<input type="file" id="select" style="display:none" onchange="JSONToChunks()" accept="text/plain">
+					<button class="picker" id="exportButton" onclick="chunksToJSON()">Export</button>
+				</div>
+			</div>
+			<div class="arrowLeftBackground" id="arrowLeftBackground">
+				<div class="arrowLeft" id="arrowLeft" onclick="toggleSidebar(this.id, 'sidebarLeft')">			
+				</div>
+			</div>
+	
+			<div class="sidebarRight" id="sidebarRight">
+				<div class="chunkInfo" id="chunkInfo">
+					<h2 style="margin: 0px"></h2>
+				</div>
+				<div class="aboutBox" id="aboutBox">
+					<h2 style="margin: 0px">About</h2>
+					<p style="margin: 0px 0px 20px 0px; line-height: 20px">Made by RSN: "Amehzyn"</p>
+					<a href="https://discord.gg/8vQu9xU" title="Pookaguy's ChunkManMode Discord">
+						<img src="images/Discord-Logo-Color.png" style="width:25%"></a>
+					<a href="https://github.com/GitGeddes/ChunkPicker" title="Source Code">
+						<img src="images/GitHub-Mark-64px.png" style="width:25%">
+					</a>
+					<p style="margin: 0px; line-height: 20px">Contact me through Discord @Amehzyn
+					</br> Please send me suggestions to improve the site!
+					</p>
+					<p style="margin: 20px 0px 10px 0px; line-height: 20px">The Old School RuneScape game and world map are copyright © Jagex Games Ltd.</p>
+					<p style="margin: 10px; line-height: 20px">This website is not affiliated with Jagex Games Ltd.</p>
+				</div>
+			</div>
+			<div class="arrowRightBackground" id="arrowRightBackground">
+				<div class="arrowRight" id="arrowRight" onclick="toggleSidebar(this.id, 'sidebarRight')">			
+				</div>
+			</div>
+		</div>
+
+		
+	</body>
+</html>
