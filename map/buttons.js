@@ -76,6 +76,8 @@ function pickChunk(id) {
 
     document.getElementById("pick1").disabled = false;
     document.getElementById("pick1").className = "picker";
+    document.getElementById("pick2").disabled = false;
+    document.getElementById("pick2").className = "picker";
 }
 
 // Randomly roll two
@@ -111,6 +113,8 @@ function pickPotentialChunk2() {
     }
     document.getElementById("pick1").disabled = true;
     document.getElementById("pick1").className = "picker disabled";
+    document.getElementById("pick2").disabled = true;
+    document.getElementById("pick2").className = "picker disabled";
 }
 
 // Move the map to the center point between all unlocked tiles
