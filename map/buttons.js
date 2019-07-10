@@ -73,13 +73,14 @@ function pickChunk(id) {
     if (!removePotential) {
         updatePotentialNumbers();
     }
+
+    document.getElementById("pick1").disabled = false;
 }
 
 // Randomly roll two
 function pickPotentialChunk2() {
     // Get checkbox values
     var removePotential = document.getElementById("removePotential").checked;
-    var selectNewNeighbors = document.getElementById("selectNewNeighbors").checked;
 	var chunks = document.getElementsByClassName("potential");
 	if (chunks.length == 0) return;
 
@@ -88,25 +89,26 @@ function pickPotentialChunk2() {
 
 	// Randomly pick one of the numbered tiles
 	for (var ii = 0; ii < 2; ii++) {
-    var randomIndex = Math.floor(Math.random() * chunks.length);
-	for (var i = chunks.length - 1; i >= 0; i--) {
-		if (i == randomIndex) {
-			var chunk = chunks[i];
-			chunk.className = "between";
-			removeElementFromArray(potentialChunks, Number(chunk.id));
-			//var savedText = chunk.innerText;
-			addChunkAsMaybe(chunk.id);
-			//chunk.innerText = savedText;
-		}
-		else if (removePotential) {
-            addChunkAsLocked(chunks[i].id);
+        var randomIndex = Math.floor(Math.random() * chunks.length);
+        for (var i = chunks.length - 1; i >= 0; i--) {
+            if (i == randomIndex) {
+                var chunk = chunks[i];
+                chunk.className = "between";
+                removeElementFromArray(potentialChunks, Number(chunk.id));
+                //var savedText = chunk.innerText;
+                addChunkAsMaybe(chunk.id);
+                //chunk.innerText = savedText;
+            }
+            else if (removePotential) {
+                addChunkAsLocked(chunks[i].id);
+            }
         }
-    }
 	}
     
     if (!removePotential) {
         updatePotentialNumbers();
     }
+    document.getElementById("pick1").disabled = true;
 }
 
 // Move the map to the center point between all unlocked tiles

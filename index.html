@@ -23,9 +23,9 @@
 			<div class="sidebarLeft" id="sidebarLeft">
 				<div class="controls" id="controls">
 					<h2 style="margin: 0px">OSRS Chunk Picker</h2>
-					<button class="picker" onclick="pickPotentialChunk()">Pick a random potential chunk!</button>
-					<button class="picker" onclick="pickPotentialChunk2()">Pick two random chunks!</button>
-					<button class="picker" onclick="centerOnUnlockedTiles()">Center on unlocked tiles</button>
+					<button id="pick1" class="picker" onclick="pickPotentialChunk()">Pick a random potential chunk!</button>
+					<button id="pick2" class="picker" onclick="pickPotentialChunk2()">Pick two random chunks!</button>
+					<button id="center" class="picker" onclick="centerOnUnlockedTiles()">Center on unlocked tiles</button>
 					<div style="margin: 10px; line-height: 20px">
 						<label class="checkLabel">
 							<input type="checkbox" id="selectNewNeighbors" checked onclick="disableOtherCheckbox(this)">
