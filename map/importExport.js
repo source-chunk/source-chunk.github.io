@@ -1,7 +1,7 @@
 // Combine the two arrays of chunk IDs into one text file
 function chunksToJSON() {
     // Combine the arrays as strings to keep them separate
-    var packedString = JSON.stringify(JSON.stringify(unlockedChunks) + JSON.stringify(potentialChunks));
+    var packedString = JSON.stringify(JSON.stringify(unlockedChunks) + JSON.stringify(potentialChunks) + JSON.stringify(maybeChunks));
     var packedURI = 'data:text/json;charset=utf-8,' + encodeURIComponent(packedString);
 
     var downloadAnchor = document.createElement("a"); // Create a temporary element
