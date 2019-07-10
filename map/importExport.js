@@ -41,11 +41,21 @@ function JSONToChunks() {
             }
         }
 
+        // Add parsed potential chunks
         var potential = split[1].split(",");
         for (var i = 0; i < potential.length; i++) {
             // Check if the array is empty from the JSON parsing
             if (potential[i] != "") {
                 addChunkAsPotential(potential[i]);
+            }
+        }
+
+        // Add parsed maybe chunks
+        var maybe = split[2].split(",");
+        for (var i = 0; i < maybe.length; i++) {
+            // Check if the array is empty from the JSON parsing
+            if (potential[i] != "") {
+                addChunkAsMaybe(maybe[i]);
             }
         }
     }
